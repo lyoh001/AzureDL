@@ -7,20 +7,16 @@ Note: Refer to the safes in Column C (""Safe"")","Reviewer's Name
 Note: Account owner's line manager / head of department to review the access appropriateness.",Review Date,Reviewer's Remarks,Reviewer name (New),Comments
 User Administrator,srv-prod-o365,srv-prod-o365@cenitex.vic.gov.au,Identity,No,Collaboration Team,Junell Jamero,2021-07-29,"Was previously used in SCORCH but not for later automation. Is used to created automated backups of tenancy settings. For SCORCH need to follow up with other developers and ultimately Tier 0 team need to be checked as this account has global admin
 Account is not  required tof backing up tenancy setting. Recommendation to remove these account. The account is not in the global admin",Junell Jamero,Junell to get back
-User Administrator,SRV Prod Az Auro,SRV-Prod-Azauto@vicgov.onmicrosoft.com,Identity,No,Cloud and Hosting Platforms Team,Lirim Selimi,2021-07-29,Apparently this was requested by IDAM for some Azure automation tasks. However account details were never handed over. I do not believe it is currently being used. Would be great if details were formally handed over.,Albert Tan,Junell to get back
 Exchange Administrator,srv-prod-o365,srv-prod-o365@cenitex.vic.gov.au,Collaboration,No,Collaboration Team,Junell Jamero,2021-07-29,"Was previously used in SCORCH but not for later automation. Is used to created automated backups of tenancy settings. For SCORCH need to follow up with other developers and ultimately Tier 0 team need to be checked as this account has global admin
 Account is not  required tof backing up tenancy setting. Recommendation to remove these account. The account is not in the global admin",Junell Jamero,Junell to get back
 SharePoint Administrator,srv-prod-o365,srv-prod-o365@cenitex.vic.gov.au,Collaboration,No,Collaboration Team,Junell Jamero,2021-07-29,"Was previously used in SCORCH but not for later automation. Is used to created automated backups of tenancy settings. For SCORCH need to follow up with other developers and ultimately Tier 0 team need to be checked as this account has global admin
 
 Account is not  required tof backing up tenancy setting. Recommendation to remove these account. The account is not in the global admin
 ",Junell Jamero,Junell to get back
-SharePoint Administrator,admin-Jayshankar S SP(CENITEX),admin-jayshankar.prembabu@cenitex.vic.gov.au,Collaboration,No,No,Vas Varousiadis,2021-08-03,Can be removed if Global Read permission can be provisioned ,Jayshankar S SP,Junell to get back
-Skype for Business Administrator,admin-Jayshankar S SP(CENITEX),admin-jayshankar.prembabu@cenitex.vic.gov.au,Collaboration,No,No,Vas Varousiadis,2021-08-03,Can be removed if Global Read permission can be provisioned ,Jayshankar S SP,Junell to get back
 Power BI Administrator,srv-prod-o365,srv-prod-o365@cenitex.vic.gov.au,Collaboration,No,Collaboration Team,Junell Jamero,2021-07-29,"Was previously used in SCORCH but not for later automation. Is used to created automated backups of tenancy settings. For SCORCH need to follow up with other developers and ultimately Tier 0 team need to be checked as this account has global admin
 
 Account is not  required tof backing up tenancy setting. Recommendation to remove these account. The account is not in the global admin
 ",Junell Jamero,Junell to get back
-Power BI Administrator,admin-Jayshankar S SP(CENITEX),admin-jayshankar.prembabu@cenitex.vic.gov.au,Collaboration,No,No,Vas Varousiadis,2021-08-03,Can be removed if Global Read permission can be provisioned ,Jayshankar S SP,Junell to get back
 Authentication admin,srv-prod-o365,srv-prod-o365@cenitex.vic.gov.au,Identity,No,Collaboration Team,Junell Jamero,2021-07-29,"Was previously used in SCORCH but not for later automation. Is used to created automated backups of tenancy settings. For SCORCH need to follow up with other developers and ultimately Tier 0 team need to be checked as this account has global admin
 
 Account is not  required tof backing up tenancy setting. Recommendation to remove these account. The account is not in the global admin
