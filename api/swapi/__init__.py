@@ -16,7 +16,7 @@ async def main(req: func.HttpRequest) -> func.HttpResponse:
         # result = await asyncio.gather(*(fetch(session, page) for page in range(1, 10)))
         return func.HttpResponse(
             status_code=200,
-            body=f"{(req.get_json())}",
+            body=f"200:{(req.get_json())}",
         )
         # return func.HttpResponse(
         #     body=json.dumps({"text": f"{result}"}, indent=4)

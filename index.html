@@ -54,13 +54,14 @@
                     <button onclick="predict();">predict</button>
                 </ul>
                 <p>Loading a prediction from API: <b id="swapi">...</b></p>
-                <script>
-                    (async function predict() {
-                        var feature1 = document.getElementById("feature1").value;
-                        var feature2 = document.getElementById("feature2").value;
-                        const { text } = await (await fetch(`/api/swapi`)).json();
-                        document.querySelector('#swapi').textContent = text;
-                    }())
+                <script type="text/python">
+                    def predict():
+                        feature1 = document.getElementById("feature1").value
+                        feature2 = document.getElementById("feature2").value
+                        url = "/api/swapi?feature1=" + feature1 + "&feature2=" + feature2
+                        fetch(url).then(response => response.json()).then(data => {
+                            document.getElementById("swapi").innerHTML = data["prediction"]
+                        })
                 </script>
             </section>
         </article>
