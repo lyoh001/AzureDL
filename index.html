@@ -1,61 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.9.5/brython.min.js">
-  </script>
-  <title>Brython Web App</title>
+    <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.9.5/brython.min.js">
+    </script>
+    <title>AzureDL</title>
 </head>
 
 <body onload=brython()>
-  <main>
-    <h1>Artificial Neural Network Prediction</h1>
-    <p>Loading a message from Azure API: <b id="message">...</b></p>
-
-    <script>
-      (async function () {
-        const { text } = await (await fetch(`/api/message`)).json();
-        document.querySelector('#message').textContent = text;
-      }())
-    </script>
-    <p>Loading a user from Azure API: <b id="user">...</b></p>
-
-    <script>
-        (async function () {
-          const { text } = await (await fetch(`/api/user`)).json();
-          document.querySelector('#user').textContent = text;
-        }())
-    </script>
-    <p>Loading a user from Azure API: <b id="env">...</b></p>
-
-    <script>
-        (async function () {
-          const { text } = await (await fetch(`/api/env`)).json();
-          document.querySelector('#env').textContent = text;
-        }())
-    </script>
-    <p>Loading a swapi from Azure API: <b id="swapi">...</b></p>
-
-    <script>
-        (async function () {
-          const { text } = await (await fetch(`/api/swapi`)).json();
-          document.querySelector('#swapi').textContent = text;
-        }())
-    </script>
-    <p>
-      <script type="text/python">
-        from browser import document, alert
-        def greet(event):
-          alert(f"Message {document['name-box'].value}!!!")
-        document["greet-button"].bind("click", greet)
-      </script>
-      <input id="name-box" placeholder="Enter your message">
-      <button id="greet-button">Brython Message</button>
-    </p>
-  </main>
+    <header id="header">
+        <!-- resume header with your name and title -->
+        <h1><b>DNN</b> PREDICTION</h1>
+        <hr>
+        A Binary Classification Prediction with Artificial Neural Network
+        <hr>
+    </header>
+    <main>
+        <article id="mainLeft">
+            <section>
+                <h2>ABOUT</h2>
+                <!-- about you -->
+                <p>A brief paragraph about you and what kind of job/company you are looking to work for.</p>
+            </section>
+            <section>
+                <h2>CONTACT</h2>
+                <!-- contact info including social media -->
+                <p>
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <a href="mailto:lyoh001@hotmail.com">lyoh001@hotmail.com</a>
+                </p>
+                <p>
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                    <a href="github.com/lyoh001">lyoh001</a>
+                </p>
+                <p>
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                    <a href="linkedin.com/lyoh001">lyoh001</a>
+                </p>
+            </section>
+            <section>
+                <h2>SKILLS</h2>
+                <!-- your skills AKA "buzzwords" -->
+                <p>Python, Machine Learning, Deep Learning, DevOps, MLOps, AWS, Azure</p>
+            </section>
+        </article>
+        <article id="mainRight">
+            <section>
+                <h2>PREDICTION</h2>
+                <!-- your work experience -->
+                <h3><b>FEATURES</b></h3>
+                <p>
+                    These are the features of the model that will be used to predict the class of the data.
+                </p>
+                <ul>
+                    <li>Feature 1</li>
+                    <li>Feature 2</li>
+                    <li>Feature 3</li>
+                    <li>Feature 4</li>
+                    <li>Feature 5</li>
+                </ul>
+                <p>Loading a prediction from Azure API: <b id="swapi">...</b></p>
+                <script>
+                    (async function () {
+                        const { text } = await (await fetch(`/api/swapi`)).json();
+                        document.querySelector('#swapi').textContent = text;
+                    }())
+                </script>
+            </section>
+        </article>
+    </main>
 </body>
 
 </html>
