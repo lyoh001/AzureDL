@@ -13,7 +13,11 @@ async def fetch(session, page):
 async def main(req: func.HttpRequest) -> func.HttpResponse:
     logging.info("Python HTTP trigger function processed a request.")
     async with aiohttp.ClientSession() as session:
-        result = await asyncio.gather(*(fetch(session, page) for page in range(1, 10)))
+        # result = await asyncio.gather(*(fetch(session, page) for page in range(1, 10)))
         return func.HttpResponse(
-            body=json.dumps({"text": f"{result}"}, indent=4)
+            status_code=200,
+            body=f"{(req.get_json())}",
         )
+        # return func.HttpResponse(
+        #     body=json.dumps({"text": f"{result}"}, indent=4)
+        # )

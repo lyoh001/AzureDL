@@ -49,15 +49,14 @@
                     These are the features of the model that will be used to predict the class of the data.
                 </p>
                 <ul>
-                    <li>Feature 1</li>
-                    <li>Feature 2</li>
-                    <li>Feature 3</li>
-                    <li>Feature 4</li>
-                    <li>Feature 5</li>
+                    <li>Feature 1: <input id="feature1"></li>
+                    <li>Feature 2: <input id="feature2"></li>
+                    <button id="predict"
+                        onclick="predict(document.getElementById('feature1').value, document.getElementById('feature2').value)">predict</button>
                 </ul>
                 <p>Loading a prediction from API: <b id="swapi">...</b></p>
                 <script>
-                    (async function () {
+                    (async function predict(feature1, feature2) {
                         const { text } = await (await fetch(`/api/swapi`)).json();
                         document.querySelector('#swapi').textContent = text;
                     }())
