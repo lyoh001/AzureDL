@@ -2,9 +2,10 @@ import warnings
 from pickle import load
 
 import azure.functions as func
-import pandas as pd
-import tensorflow as tf
-from tensorflow import keras
+
+# import pandas as pd
+# import tensorflow as tf
+# from tensorflow import keras
 
 tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 warnings.filterwarnings("ignore")
