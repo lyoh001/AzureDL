@@ -11,7 +11,7 @@ warnings.filterwarnings("ignore")
 
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
-    preprocessor = load(open("dl_model/dl_preprocessor.pkl", "rb"))
+    preprocessor = load(open("dl_preprocessor/dl_preprocessor.pkl", "rb"))
     model = keras.models.load_model("dl_model")
     return func.HttpResponse(
         # body=f"{model.predict(preprocessor.transform(pd.DataFrame(req.get_json())))}",
