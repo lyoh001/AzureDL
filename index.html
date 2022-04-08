@@ -1,10 +1,8 @@
 <html>
 
 <head>
-    <link href="styles.css" rel="stylesheet">
+    <link href="app/styles.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.9.5/brython.min.js">
-    </script>
     <title>AzureDL</title>
 </head>
 
@@ -53,15 +51,22 @@
                     <li>Feature 2: <input id="feature2"></li>
                     <button onclick="predict();">predict</button>
                 </ul>
-                <p>Loading a prediction from API: <b id="swapi">...</b></p>
-                <script type="text/python">
-                    def predict():
-                        feature1 = document.getElementById("feature1").value
-                        feature2 = document.getElementById("feature2").value
-                        url = "/api/swapi?feature1=" + feature1 + "&feature2=" + feature2
-                        fetch(url).then(response => response.json()).then(data => {
-                            document.getElementById("swapi").innerHTML = data["prediction"]
-                        })
+                <p>Prediction: <b id="prediction">...</b></p>
+                <script>
+                    function predict() {
+                        var feature1 = document.getElementById("feature1").value;
+                        var feature2 = document.getElementById("feature2").value;
+                        var http = new XMLHttpRequest();
+                        http.open("POST", "api/predict", true);
+                        http.setRequestHeader("Content-Type", "application/json");
+                        http.onreadystatechange = function () {
+                            if (http.readyState == 4 && http.status == 200) {
+                                var response = http.responseText
+                                document.getElementById("prediction").innerHTML = response;
+                            }
+                        }
+                        http.send(JSON.stringify({ "feature1": feature1, "feature2": feature2 }));
+                    }
                 </script>
             </section>
         </article>

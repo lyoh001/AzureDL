@@ -1,2 +1,5 @@
-aiohttp
 azure-functions
+black
+pandas
+sklearn
+tensorflow
