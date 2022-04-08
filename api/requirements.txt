@@ -1,5 +1,4 @@
 azure-functions
-black
-# pandas
-# sklearn
-# tensorflow
+pandas
+sklearn
+tensorflow
