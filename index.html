@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.9.5/brython.min.js">
+  </script>
+  <title>Brython Web App</title>
+</head>
+
+<body onload=brython()>
+  <main>
+    <h1>Artificial Neural Network Prediction</h1>
+    <p>Loading a message from Azure API: <b id="message">...</b></p>
+
+    <script>
+      (async function () {
+        const { text } = await (await fetch(`/api/message`)).json();
+        document.querySelector('#message').textContent = text;
+      }())
+    </script>
+    <p>Loading a user from Azure API: <b id="user">...</b></p>
+
+    <script>
+        (async function () {
+          const { text } = await (await fetch(`/api/user`)).json();
+          document.querySelector('#user').textContent = text;
+        }())
+    </script>
+    <p>Loading a user from Azure API: <b id="env">...</b></p>
+
+    <script>
+        (async function () {
+          const { text } = await (await fetch(`/api/env`)).json();
+          document.querySelector('#env').textContent = text;
+        }())
+    </script>
+    <p>Loading a swapi from Azure API: <b id="swapi">...</b></p>
+
+    <script>
+        (async function () {
+          const { text } = await (await fetch(`/api/swapi`)).json();
+          document.querySelector('#swapi').textContent = text;
+        }())
+    </script>
+    <p>
+      <script type="text/python">
+        from browser import document, alert
+        def greet(event):
+          alert(f"Message {document['name-box'].value}!!!")
+        document["greet-button"].bind("click", greet)
+      </script>
+      <input id="name-box" placeholder="Enter your message">
+      <button id="greet-button">Brython Message</button>
+    </p>
+  </main>
+</body>
+
+</html>
