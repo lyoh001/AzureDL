@@ -51,12 +51,13 @@
                 <ul>
                     <li>Feature 1: <input id="feature1"></li>
                     <li>Feature 2: <input id="feature2"></li>
-                    <button id="predict"
-                        onclick="predict(document.getElementById('feature1').value, document.getElementById('feature2').value)">predict</button>
+                    <button onclick="predict();">predict</button>
                 </ul>
                 <p>Loading a prediction from API: <b id="swapi">...</b></p>
                 <script>
-                    (async function predict(feature1, feature2) {
+                    (async function predict() {
+                        var feature1 = document.getElementById("feature1").value;
+                        var feature2 = document.getElementById("feature2").value;
                         const { text } = await (await fetch(`/api/swapi`)).json();
                         document.querySelector('#swapi').textContent = text;
                     }())
