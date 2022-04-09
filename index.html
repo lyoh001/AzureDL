@@ -69,7 +69,7 @@
                                 document.getElementById("prediction").innerHTML = response;
                             }
                         }
-                        http.send(JSON.stringify({ "sepal length (cm)": feature1, "sepal width (cm)": feature2, "petal length (cm)": feature3, "petal width (cm)": feature4 }));
+                        http.send(JSON.stringify({ "sepal length (cm)": [feature1], "sepal width (cm)": [feature2], "petal length (cm)": [feature3], "petal width (cm)": [feature4] }));
                     }
                 </script>
             </section>
