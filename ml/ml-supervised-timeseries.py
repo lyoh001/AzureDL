@@ -53,29 +53,16 @@ from sklearn.preprocessing import (
 )
 from sklearn.svm import SVC, SVR
 from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor, plot_tree
-from statsmodels.tsa.seasonal import seasonal_decompose
 from tensorflow import keras
 from xgboost import XGBClassifier, XGBRegressor
 
 set_config(display="diagram", print_changed_only=False)
 #%%
-df, y_label = (
-    pd.read_csv(
-        "https://raw.githubusercontent.com/microsoft/ML-For-Beginners/main/7-TimeSeries/data/energy.csv",
-        date_parser=lambda x: pd.datetime.strptime(x, "%Y-%m-%d %H:%M:%S"),
-        parse_dates=["timestamp"],
-        index_col=0,
-    ),
-    "load",
-)
-df, y_label = (
-    pd.read_csv(
-        "../.data/kaggle.csv",
-        date_parser=lambda x: pd.datetime.strptime(x, "%Y-%m-%d"),
-        parse_dates=["Date"],
-        index_col=0,
-    ),
-    "Hardcover",
+df = pd.read_csv(
+    "https://raw.githubusercontent.com/microsoft/ML-For-Beginners/main/7-TimeSeries/data/energy.csv",
+    date_parser=lambda x: pd.datetime.strptime(x, "%Y-%m-%d %H:%M:%S"),
+    parse_dates=["timestamp"],
+    index_col=0,
 )
 df
 #%%
@@ -103,20 +90,18 @@ col_cat = [
     if df[col].dtype in ["object", "bool"] and df[col].nunique() < 10
 ]
 col_num = [
-    col for col in df.columns if df[col].dtype in ["float", "int"] and col == y_label
+    col for col in df.columns if df[col].dtype in ["float", "int"] and col == "load"
 ]
 col_cat, col_num, col_cat + col_num
 #%%
 font_size = 15
-df.plot(y=y_label, subplots=True, figsize=(20, 10), fontsize=font_size)
-plt.xlabel("Timestamp", fontsize=font_size)
-plt.ylabel(y_label, fontsize=font_size)
+df.plot(y="load", subplots=True, figsize=(20, 10), fontsize=font_size)
+plt.xlabel("Time", fontsize=font_size)
+plt.ylabel("Load", fontsize=font_size)
 plt.show()
 #%%
-seasonal_decompose(df[y_label]).plot()
-#%%
 print(df.index.min(), df.index.max(), df.shape)
-date_split = "2000-04-25"
+date_split = "2014-12-01"
 df_train = df[df.index < date_split][col_cat + col_num]
 df_test = df[df.index >= date_split][col_cat + col_num]
 df_train.shape, df_test.shape
@@ -125,8 +110,8 @@ font_size = 15
 df_train.join(df_test, how="outer", lsuffix="_train", rsuffix="_test").plot(
     subplots=False, figsize=(20, 10), fontsize=font_size
 )
-plt.xlabel("Timestamp", fontsize=font_size)
-plt.ylabel(y_label, fontsize=font_size)
+plt.xlabel("Time", fontsize=font_size)
+plt.ylabel("Load", fontsize=font_size)
 plt.show()
 #%%
 transformer_cat = make_pipeline(

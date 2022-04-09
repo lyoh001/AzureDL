@@ -10,32 +10,58 @@ from sklearn import set_config
 from sklearn.compose import make_column_transformer
 from sklearn.datasets import load_diabetes, load_iris
 from sklearn.decomposition import PCA
-from sklearn.ensemble import (RandomForestClassifier, RandomForestRegressor,
-                              VotingClassifier, VotingRegressor)
+from sklearn.ensemble import (
+    RandomForestClassifier,
+    RandomForestRegressor,
+    VotingClassifier,
+    VotingRegressor,
+)
 from sklearn.experimental import enable_iterative_imputer
 from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.feature_selection import (SelectKBest, SelectPercentile, chi2,
-                                       f_classif, mutual_info_classif)
+from sklearn.feature_selection import (
+    SelectKBest,
+    SelectPercentile,
+    chi2,
+    f_classif,
+    mutual_info_classif,
+)
 from sklearn.impute import IterativeImputer, KNNImputer, SimpleImputer
 from sklearn.linear_model import LinearRegression, LogisticRegression
-from sklearn.metrics import (classification_report, plot_confusion_matrix,
-                             plot_roc_curve, r2_score, roc_auc_score)
-from sklearn.model_selection import (GridSearchCV, RandomizedSearchCV,
-                                     StratifiedKFold, train_test_split)
+from sklearn.metrics import (
+    classification_report,
+    plot_confusion_matrix,
+    plot_roc_curve,
+    r2_score,
+    roc_auc_score,
+)
+from sklearn.model_selection import (
+    GridSearchCV,
+    RandomizedSearchCV,
+    StratifiedKFold,
+    train_test_split,
+)
 from sklearn.naive_bayes import GaussianNB, MultinomialNB
 from sklearn.neighbors import KNeighborsClassifier, KNeighborsRegressor
 from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import (FunctionTransformer, MinMaxScaler,
-                                   OneHotEncoder, OrdinalEncoder,
-                                   PolynomialFeatures, StandardScaler)
+from sklearn.preprocessing import (
+    FunctionTransformer,
+    MinMaxScaler,
+    OneHotEncoder,
+    OrdinalEncoder,
+    PolynomialFeatures,
+    StandardScaler,
+)
 from sklearn.svm import SVC, SVR
-from sklearn.tree import (DecisionTreeClassifier, DecisionTreeRegressor,
-                          plot_tree)
+from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor, plot_tree
 from tensorflow import keras
 from xgboost import XGBClassifier, XGBRegressor
 
 set_config(display="diagram", print_changed_only=False)
 #%%
+df, y_label = (
+    load_diabetes(as_frame=True)["frame"].iloc[:, [2, -1]].sort_values(by=["bmi"]),
+    "target",
+)
 df, y_label = (
     pd.DataFrame(
         {
@@ -43,10 +69,6 @@ df, y_label = (
             "target": [random.gauss(i, 30) for i in range(100)],
         },
     ),
-    "target",
-)
-df, y_label = (
-    load_diabetes(as_frame=True)["frame"].iloc[:, [2, -1]].sort_values(by=["bmi"]),
     "target",
 )
 df
@@ -163,7 +185,7 @@ for test in tests:
         estimator=test["model"],
         param_distributions=test["params"],
         n_jobs=-1,
-        cv=cv,
+        # cv=cv,
         scoring="r2",
         # scoring="neg_mean_squared_error",
         n_iter=10,
@@ -260,8 +282,7 @@ print("====end===========================\n")
 #%%
 rscv.best_estimator_
 #%%
-%matplotlib inline
-plt.plot(X, rscv.predict(X), color="red")
+plt.plot(X, rscv.predict(X), color="red", lineWidth=3)
 plt.scatter(X, y)
 plt.title(
     "Polynomial Linear Regression using scikit-learn and python 3",
@@ -279,6 +300,8 @@ print(r2_score(y_test, rscv.predict(X_test)))
 y_test[:10]
 #%%
 rscv.predict(X_test)[:10].reshape(-1, 1)
+#%%
+plot_tree(models[2].named_steps["decisiontreeregressor"], filled=True)
 #%%
 rscv.best_estimator_.get_params()
 #%%

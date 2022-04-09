@@ -6,38 +6,61 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 import tensorflow as tf
+from numpy.core.fromnumeric import size
 from sklearn import set_config
 from sklearn.compose import make_column_transformer
 from sklearn.datasets import load_diabetes, load_iris
 from sklearn.decomposition import PCA
-from sklearn.ensemble import (RandomForestClassifier, RandomForestRegressor,
-                              VotingClassifier, VotingRegressor)
+from sklearn.ensemble import (
+    RandomForestClassifier,
+    RandomForestRegressor,
+    VotingClassifier,
+    VotingRegressor,
+)
 from sklearn.experimental import enable_iterative_imputer
 from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.feature_selection import (SelectKBest, SelectPercentile, chi2,
-                                       f_classif, mutual_info_classif)
+from sklearn.feature_selection import (
+    SelectKBest,
+    SelectPercentile,
+    chi2,
+    f_classif,
+    mutual_info_classif,
+)
 from sklearn.impute import IterativeImputer, KNNImputer, SimpleImputer
 from sklearn.linear_model import LinearRegression, LogisticRegression
-from sklearn.metrics import (classification_report, plot_confusion_matrix,
-                             plot_roc_curve, r2_score, roc_auc_score)
-from sklearn.model_selection import (GridSearchCV, RandomizedSearchCV,
-                                     StratifiedKFold, train_test_split)
+from sklearn.metrics import (
+    classification_report,
+    plot_confusion_matrix,
+    plot_roc_curve,
+    r2_score,
+    roc_auc_score,
+)
+from sklearn.model_selection import (
+    GridSearchCV,
+    RandomizedSearchCV,
+    StratifiedKFold,
+    train_test_split,
+)
 from sklearn.naive_bayes import GaussianNB, MultinomialNB
 from sklearn.neighbors import KNeighborsClassifier, KNeighborsRegressor
 from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import (FunctionTransformer, MinMaxScaler,
-                                   OneHotEncoder, OrdinalEncoder,
-                                   PolynomialFeatures, StandardScaler)
+from sklearn.preprocessing import (
+    FunctionTransformer,
+    MinMaxScaler,
+    OneHotEncoder,
+    OrdinalEncoder,
+    PolynomialFeatures,
+    StandardScaler,
+)
 from sklearn.svm import SVC, SVR
-from sklearn.tree import (DecisionTreeClassifier, DecisionTreeRegressor,
-                          plot_tree)
+from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor, plot_tree
 from tensorflow import keras
 from xgboost import XGBClassifier, XGBRegressor
 
 set_config(display="diagram", print_changed_only=False)
 #%%
-df, y_label = pd.read_csv("../.data/titanic.csv", index_col=0), "Survived"
 df, y_label = load_iris(as_frame=True)["frame"], "target"
+df, y_label = pd.read_csv("../.data/kaggle.csv"), "output"
 df
 #%%
 df.describe()
@@ -276,7 +299,7 @@ for test in tests:
     rscv.fit(X_train, y_train)
     models.append(rscv.best_estimator_)
     print("===train============================")
-    print(f"{rscv.best_score_ * 100:.2f}%\t{test['model'][-1]}\t{rscv.best_params_}")
+    print(f"{rscv.best_score_ * 100:.2f}%\t{test['model'][2]}\t{rscv.best_params_}")
     print("===params============================")
     display(pd.DataFrame(rscv.cv_results_).sort_values(by="rank_test_score"))
     print("===test============================")
