@@ -47,8 +47,10 @@
                     These are the features of the model that will be used to predict the class of the data.
                 </p>
                 <ul>
-                    <li>Feature 1: <input id="feature1"></li>
-                    <li>Feature 2: <input id="feature2"></li>
+                    <li>sepal length (cm): <input id="feature1"></li>
+                    <li>sepal width (cm): <input id="feature2"></li>
+                    <li>petal length (cm): <input id="feature3"></li>
+                    <li>petal width (cm): <input id="feature4"></li>
                     <button onclick="predict();">predict</button>
                 </ul>
                 <p>Prediction: <b id="prediction">...</b></p>
@@ -56,8 +58,10 @@
                     function predict() {
                         var feature1 = document.getElementById("feature1").value;
                         var feature2 = document.getElementById("feature2").value;
+                        var feature3 = document.getElementById("feature3").value;
+                        var feature4 = document.getElementById("feature4").value;
                         var http = new XMLHttpRequest();
-                        http.open("POST", "api/predict", true);
+                        http.open("POST", "api/azuredl", true);
                         http.setRequestHeader("Content-Type", "application/json");
                         http.onreadystatechange = function () {
                             if (http.readyState == 4 && http.status == 200) {
@@ -65,7 +69,7 @@
                                 document.getElementById("prediction").innerHTML = response;
                             }
                         }
-                        http.send(JSON.stringify({ "feature1": feature1, "feature2": feature2 }));
+                        http.send(JSON.stringify({ "sepal length (cm)": feature1, "sepal width (cm)": feature2, "petal length (cm)": feature3, "petal width (cm)": feature4 }));
                     }
                 </script>
             </section>
