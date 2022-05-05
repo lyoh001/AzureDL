@@ -17,7 +17,9 @@ This MLOps workflow covering Deep Learning model prediction written with Tensorf
 ![Figure 1: Logical Architecture Overview](./.images/workflow.png)
 - Azure Static Web Apps gets deployed via IaC (Azure Bicep)
 - Code gets pushed to Github via integrated into the pipeline
-- [DL Notebooks](#./dl/dl-ann.ipynb) gets trained and deployed to Azure Functions
 
-## 3 MSDocs Link
+## 3 SWA Link
+Ref: [DL](https://yellow-dune-08d318d10.1.azurestaticapps.net/)
+
+## 4 MSDocs Link
 Ref: [MSDocs](https://docs.microsoft.com/en-us/azure/static-web-apps/functions-bring-your-own/)
