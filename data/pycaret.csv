@@ -1,0 +1,57 @@
+Dataset,Data Types,Default Task,Target Variable 1,Target Variable 2,# Instances,# Attributes,Missing Values,Url
+anomaly,Multivariate,Anomaly Detection,None,None,1000,10,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/anomaly.csv
+france,Multivariate,Association Rule Mining,InvoiceNo,Description,8557,8,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/france.csv
+germany,Multivariate,Association Rule Mining,InvoiceNo,Description,9495,8,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/germany.csv
+bank,Multivariate,Classification (Binary),deposit,None,45211,17,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/bank.csv
+blood,Multivariate,Classification (Binary),Class,None,748,5,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/blood.csv
+cancer,Multivariate,Classification (Binary),Class,None,683,10,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/cancer.csv
+credit,Multivariate,Classification (Binary),default,None,24000,24,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/credit.csv
+diabetes,Multivariate,Classification (Binary),Class variable,None,768,9,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/diabetes.csv
+electrical_grid,Multivariate,Classification (Binary),stabf,None,10000,14,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/electrical_grid.csv
+employee,Multivariate,Classification (Binary),left,None,14999,10,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/employee.csv
+heart,Multivariate,Classification (Binary),DEATH,None,200,16,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/heart.csv
+heart_disease,Multivariate,Classification (Binary),Disease,None,270,14,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/heart_disease.csv
+hepatitis,Multivariate,Classification (Binary),Class,None,154,32,Y,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/hepatitis.csv
+income,Multivariate,Classification (Binary),income >50K,None,32561,14,Y,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/income.csv
+juice,Multivariate,Classification (Binary),Purchase,None,1070,15,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/juice.csv
+nba,Multivariate,Classification (Binary),TARGET_5Yrs,None,1340,21,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/nba.csv
+wine,Multivariate,Classification (Binary),type,None,6498,13,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/wine.csv
+telescope,Multivariate,Classification (Binary),Class,None,19020,11,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/telescope.csv
+titanic,Multivariate,Classification (Binary),Survived,None,891,11,Y,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/titanic.csv
+us_presidential_election_results,Multivariate,Classification (Binary),party_winner,None,497,7,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/us_presidential_election_results.csv
+glass,Multivariate,Classification (Multiclass),Type,None,214,10,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/glass.csv
+iris,Multivariate,Classification (Multiclass),species,None,150,5,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/iris.csv
+poker,Multivariate,Classification (Multiclass),CLASS,None,100000,11,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/poker.csv
+questions,Multivariate,Classification (Multiclass),Next_Question,None,499,4,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/questions.csv
+satellite,Multivariate,Classification (Multiclass),Class,None,6435,37,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/satellite.csv
+CTG,Multivariate,Classification (Multiclass),NSP,None,2129,40,Y,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/CTG.csv
+asia_gdp,Multivariate,Clustering,None,None,40,11,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/asia_gdp.csv
+elections,Multivariate,Clustering,None,None,3195,54,Y,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/elections.csv
+facebook,Multivariate,Clustering,None,None,7050,12,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/facebook.csv
+ipl,Multivariate,Clustering,None,None,153,25,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/ipl.csv
+jewellery,Multivariate,Clustering,None,None,505,4,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/jewellery.csv
+mice,Multivariate,Clustering,None,None,1080,82,Y,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/mice.csv
+migration,Multivariate,Clustering,None,None,233,12,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/migration.csv
+perfume,Multivariate,Clustering,None,None,20,29,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/perfume.csv
+pokemon,Multivariate,Clustering,None,None,800,13,Y,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/pokemon.csv
+population,Multivariate,Clustering,None,None,255,56,Y,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/population.csv
+public_health,Multivariate,Clustering,None,None,224,21,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/public_health.csv
+seeds,Multivariate,Clustering,None,None,210,7,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/seeds.csv
+wholesale,Multivariate,Clustering,None,None,440,8,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/wholesale.csv
+tweets,Text,NLP,tweet,None,8594,2,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/tweets.csv
+amazon,Text,NLP / Classification,reviewText,None,20000,2,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/amazon.csv
+kiva,Text,NLP / Classification,en,None,6818,7,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/kiva.csv
+spx,Text,NLP / Regression,text,None,874,4,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/spx.csv
+wikipedia,Text,NLP / Classification,Text,None,500,3,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/wikipedia.csv
+automobile,Multivariate,Regression,price,None,202,26,Y,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/automobile.csv
+bike,Multivariate,Regression,cnt,None,17379,15,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/bike.csv
+boston,Multivariate,Regression,medv,None,506,14,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/boston.csv
+concrete,Multivariate,Regression,strength,None,1030,9,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/concrete.csv
+diamond,Multivariate,Regression,Price,None,6000,8,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/diamond.csv
+energy,Multivariate,Regression,Heating Load,Cooling Load,768,10,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/energy.csv
+forest,Multivariate,Regression,area,None,517,13,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/forest.csv
+gold,Multivariate,Regression,Gold_T+22,None,2558,121,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/gold.csv
+house,Multivariate,Regression,SalePrice,None,1461,81,Y,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/house.csv
+insurance,Multivariate,Regression,charges,None,1338,7,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/insurance.csv
+parkinsons,Multivariate,Regression,PPE,None,5875,22,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/parkinsons.csv
+traffic,Multivariate,Regression,traffic_volume,None,48204,8,N,https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/traffic.csv

@@ -19,8 +19,5 @@ This MLOps workflow covering Deep Learning model prediction written with Tensorf
 - Code gets pushed to Github via integrated into the pipeline
 - [DL Notebooks](#./dl/dl-ann.ipynb) gets trained and deployed to Azure Functions
 
-## 3 Prediction Link
-Ref: [DL](https://yellow-dune-08d318d10.1.azurestaticapps.net/)
-
 ## 3 MSDocs Link
 Ref: [MSDocs](https://docs.microsoft.com/en-us/azure/static-web-apps/functions-bring-your-own/)
