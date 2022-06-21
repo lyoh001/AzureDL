@@ -1,4 +1,4 @@
-# Yohan John Lee's MLOps Workflow
+# MLOps Workflow
 ## 1. Introduction
 ### 1.1	Overview
 
@@ -10,7 +10,6 @@ This MLOps workflow covering Deep Learning model prediction written with Tensorf
 - Azure Functions
 - Github Actions (CICD pipeline)
 - Github Codespace (devcontainer & Dockerfile)
-
 
 ## 2 Logical Architecture
 ### 2.1	Logical System Component Overview

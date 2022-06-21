@@ -33,5 +33,6 @@ sudo apt-get update && sudo apt-get dist-upgrade -y \
 && gsettings set org.gnome.shell.extensions.dash-to-dock unity-backlit-items true \
 && gsettings set org.gnome.shell.extensions.desktop-icons show-home false \
 && gsettings set org.gnome.shell.extensions.desktop-icons show-trash false \
+&& im-config -n xim \
 && gnome-extensions install ./3.36.3.zip --force \
 && sudo sh ./install.sh
